@@ -1,0 +1,9 @@
+(1) lambda=12 SIMPLE at k=0, uniform eigenvector: OK
+(2) EXACT generic-direction curvature = -(4/3)|k|^2, isotropic: OK
+(3) charpoly root series dir (1, 0, 0): c2 = -4/3 = -4/3, c4 = 2/27: OK
+(3) charpoly root series dir (1, 1, 0): c2 = -4/3 = -4/3, c4 = 5/108: OK
+(3) charpoly root series dir (1, 1, 1): c2 = -4/3 = -4/3, c4 = 1/27: OK
+(3) charpoly root series dir (2, 1, 3): c2 = -4/3 = -4/3, c4 = 5/108: OK
+(3) charpoly root series dir (1, 2, 0): c2 = -4/3 = -4/3, c4 = 38/675: OK
+(4) dense grid audit max lambda_max off-origin = 11.991778148 < 12 STRICT: OK
+ALL BAND-HEAD UNIQUENESS CHECKS PASS

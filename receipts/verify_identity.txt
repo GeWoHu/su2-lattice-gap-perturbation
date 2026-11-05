@@ -1,0 +1,6 @@
+A: 12-regular exact adjacency built, n = 375
+OPERATOR IDENTITY EXACT: M2(vacuum in Q) = (1/3+v)A + c I, J cancels
+2x2 mixing term n/3 == <u|(1/3)J|u>: mixing already inside M2 (no extra +|P|/3)
+lambda(u) = -13196/105  c2 = lambda(u) + |P|/3 = -71/105
+head at k=0 EXACT (Gershgorin lambda_A(k)<=12 iff k=0); c2 = -71/105 unconditional L>=5
+ADJUDICATION COMPLETE: referee's +|P|/3 double-counts the vacuum channel.

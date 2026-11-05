@@ -1,0 +1,6 @@
+T2 coefficient: (1/2)*(-71/105)*2^2 = -142/105 = -142/105 OK: True
+T3 relative: 284/315 = 284/315 OK: True
+c2 under mu'=mu/2: -284/105 = -284/105 = -71/420*? -> -284/105 OK
+remainder order: (g^2/2)*mu^3 ~ g^2*g^-18 = g^-16 OK
+band curvature: (1/21)*(4/3) = 4/63 = 4/63 OK
+24v+127/15 = -71/105 = -71/105 OK: True

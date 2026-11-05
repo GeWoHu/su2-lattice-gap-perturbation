@@ -1,0 +1,390 @@
+\appendix
+\section{Peter--Weyl index chains and vanishing lemmas}\label{app:A}
+Write $\chi(g)=\Tr g$ (spin $\tfrac12$ character). For a loop
+$C=(\ell_1,\dots,\ell_4)$,
+$\chi(U_C)=U_1{}^{a}{}_{b}\,U_2{}^{b}{}_{c}\,U_3{}^{c}{}_{d}\,
+U_4{}^{d}{}_{a}$ (summation over repeated indices).
+
+\begin{lemma}[vanishing rules]\label{lem:degree}
+Let $F$ be a monomial in link matrix coefficients with per-link bidegree
+$(p_\ell,q_\ell)$ (numbers of $U$-type and $\bar U$-type factors of link
+$\ell$). Then $\int F\,dU=0$ unless
+\begin{enumerate}
+\item[(i)] $p_\ell-q_\ell$ is \emph{even} for every $\ell$ (single-link
+center parity: the flip $U_\ell\mapsto -U_\ell$ preserves Haar measure and
+multiplies $F$ by $(-1)^{p_\ell-q_\ell}$); and
+\item[(ii)] the representation tensor product carries an invariant vector
+after all intertwiners are contracted; in particular a link of bidegree
+$(1,0)$ or $(0,1)$ forces vanishing, since $V_{1/2}$ has no invariant and
+$\int U^a{}_b\,dU=0$.
+\end{enumerate}
+These are the only rules used in this paper. (Neither is a complete
+criterion: unequal-degree integrals such as $\int UU$ \emph{can} be nonzero
+for $\G$, via $\varepsilon$-pairings --- see Lemma \ref{lem:sym2}.)
+\end{lemma}
+
+\begin{lemma}[symmetric-slot rule]\label{lem:sym2}
+$\displaystyle\int U^a{}_b\,U^c{}_d\,dU=\tfrac12\,\varepsilon^{ac}
+\varepsilon_{bd}$; consequently, if a monomial has some link contributing
+two $U$-factors occupying a single symmetric (spin-$1$) matrix coefficient
+and no $\bar U$-factor on that link, the integral vanishes, because
+$\varepsilon^{ac}$ annihilates the symmetric pair.
+\end{lemma}
+\begin{proof}
+The left side is an intertwiner in $\mathrm{Inv}(V\otimes V\otimes V\otimes V)$
+unique up to scale, and $\tfrac12\varepsilon^{ac}\varepsilon_{bd}$ is the
+invariant pairing; the annihilation statement is $\varepsilon^{ac}S_{ac}=0$
+for symmetric $S$.
+\end{proof}
+
+\begin{lemma}[diagonal Gram]\label{lem:gramA}
+$\langle\chi(U_C),\chi(U_C)\rangle=1$.
+\end{lemma}
+\begin{proof}
+$\overline{\chi(U_C)}=\chi(U_C^\dagger)
+=\bar U_4{}^{a}{}_{d}\bar U_3{}^{d}{}_{c}\bar U_2{}^{c}{}_{b}\bar U_1{}^{b}{}_{a}$.
+Apply Peter--Weyl orthogonality link by link,
+$\int U^a{}_b\,\overline{U^c{}_d}\,dU=\tfrac12\delta^a_d\,\delta^c_b$:
+each of the four links contributes $\tfrac12$; each of the four successive
+index closures contributes a factor $2$; the product is
+$2^{-4}\cdot 2^{4}=1$.
+\end{proof}
+
+\begin{lemma}[off-support vanishing]\label{lem:offsupport}
+If $C\ne C'$ are closed loops of length $4$ on $\mathbb T_L^3$, then
+$\langle\chi(U_C),\chi(U_{C'})\rangle=0$.
+\end{lemma}
+\begin{proof}
+Some $\ell\in C\setminus C'$; the integrand has bidegree $(1,0)$ on $\ell$,
+so Lemma \ref{lem:degree}(ii) applies.
+\end{proof}
+
+\section{Recoupling coefficients $c_0^2=\tfrac14$, $c_1^2=\tfrac34$}\label{app:B}
+\subsection{Method 1: $6j$/F-move calculus}
+Let $|s\rangle$, $s\in\{0,1\}$, be the orthonormal $s$-channel basis of the
+intertwiner space $\mathrm{Inv}(V_{1/2}^{\otimes 4})$: pair links
+$(\ell_1,\ell_2)$ to spin $s$ and $(\ell_3,\ell_4)$ to the same $s$. The
+regeneration state $\chi(U_{p})\,\chi(U_{q})$ for touching $p,q$ (shared
+link $\ell_1$) is, in link language, the four-valent contraction with
+$\ell_1$ appearing twice; changing from the plaquette pairing to the
+shared-link pairing is the $F$-move
+\[
+F=\begin{pmatrix}\tfrac12 & \tfrac{\sqrt3}{2}\\[2pt]
+\tfrac{\sqrt3}{2} & -\tfrac12\end{pmatrix},
+\qquad
+F_{ss'}=\sqrt{(2s+1)(2s'+1)}
+\left\{\begin{matrix}\tfrac12&\tfrac12&s\\ \tfrac12&\tfrac12&s'\end{matrix}\right\},
+\]
+i.e.\ the $6j$ values
+$\{ \tfrac12\tfrac12 0;\tfrac12\tfrac12 0\}=\tfrac12$,
+$\{\tfrac12\tfrac12 1;\tfrac12\tfrac12 1\}=-\tfrac16$,
+$\{\tfrac12\tfrac12 0;\tfrac12\tfrac12 1\}=\tfrac12$
+($\pm$ signs convention-dependent; only squares enter). Hence the
+touching-regeneration state decomposes with amplitudes
+$c_0=F_{00}=\tfrac12$, $c_1=F_{10}=\tfrac{\sqrt3}{2}$:
+$c_0^2=\tfrac14$, $c_1^2=\tfrac34$, $c_0^2+c_1^2=1$ (unit regeneration norm,
+Lemma \ref{lem:gramA}). Energies: the $s$-channel intermediate has six links
+of flux $\tfrac12$ and the shared link of flux $s$:
+$E_s=6\cdot\tfrac34+s(s+1)\in\{\tfrac92,\tfrac{13}{2}\}$, so
+$v=\frac{c_0^2}{3-9/2}+\frac{c_1^2}{3-13/2}=-\frac8{21}$.
+
+\subsection{Method 2: Weingarten integration}
+$\langle p|V\,\Pi_s\,V|q\rangle$ for touching $p,q$ reduces to integrals of
+products of four matrix coefficients on the shared link,
+$\int U^a{}_bU^c{}_d\bar U^e{}_f\bar U^g{}_h\,dU$, evaluated by the $\G$
+Weingarten rule
+$\int U\otimes\bar U\otimes U\otimes\bar U
+=\tfrac{1}{6}(\text{id}-\tfrac12\text{flip})
++\tfrac{1}{3}(\text{flip}-\tfrac12\text{id})$
+(dimension formulas $\int P_{\mathrm{sym}}=\tfrac34$,
+$\int P_{\mathrm{asym}}=\tfrac14$). Both methods agree exactly; the
+machine check is \texttt{verify\_anchors.py} and
+\texttt{verify\_identity.py} \cite{YM04code}.
+
+\subsection{$\chi_1$ regeneration}
+Pointwise fusion $\chi_{1/2}(g)^2=\chi_0(g)+\chi_1(g)$ gives
+$V|p\rangle\supset-\mathbf 1-|\chi_1(p)\rangle$; $|\chi_1(p)\rangle$ carries
+pure flux $j=1$ on the four links of $p$ ($E_n=8$) and has norm $1$ by the
+index chain of Lemma \ref{lem:gramA} with the spin-$1$ representation
+($\int\chi_1\bar\chi_1$-type contraction, same $2^{\pm4}$ bookkeeping).
+Amplitude $\langle p|V|\chi_1(p)\rangle=-1$, channel $-1/5$.
+
+\section{Adjacency census and the band-head lemma}\label{app:C}
+\textbf{Census.} On $\mathbb T_L^3$ every bond lies in exactly four
+plaquettes (two planes through the bond direction, two transverse sides),
+hence each plaquette shares exactly one link with $4\text{ (links)}\times
+3\text{ (partners)}=12$ others, and distinct plaquettes never share two
+links. The touching adjacency $A$ is $12$-regular; both the degree and the
+$\{0,1\}$ intersection property are verified exhaustively at $L=5$
+($n=375$) in \texttt{verify\_identity.py}.
+
+\textbf{Fiber decomposition.} Translations act freely on plaquettes of each
+of the three orientations $(xy,xz,yz)$; Fourier transform along
+$\mathbb Z_L^3$ block-diagonalizes $A$ into $3\times3$ fibers
+\[
+A(k)=\begin{pmatrix}
+2\cos k_x+2\cos k_y & 4\cos\tfrac{k_y}{2}\cos\tfrac{k_z}{2} &
+4\cos\tfrac{k_x}{2}\cos\tfrac{k_z}{2}\\
+4\cos\tfrac{k_y}{2}\cos\tfrac{k_z}{2} & 2\cos k_x+2\cos k_z &
+4\cos\tfrac{k_x}{2}\cos\tfrac{k_y}{2}\\
+4\cos\tfrac{k_x}{2}\cos\tfrac{k_z}{2} & 4\cos\tfrac{k_x}{2}\cos\tfrac{k_y}{2} &
+2\cos k_y+2\cos k_z
+\end{pmatrix},
+\]
+(derivation: the two bonds through which an $xy$-plaquette at the origin
+touches $xz$-plaquettes are displaced by $\pm e_y$ and $\pm e_z$ relative to
+the shared-bond identification, producing the product-of-cosines entries;
+each entry is the sum of the four phase weights of the corresponding
+touching family).
+
+\textbf{Gershgorin bound.} Row $xy$:
+$\lambda\le 2\cos k_x+2\cos k_y+4|\cos\tfrac{k_y}{2}\cos\tfrac{k_z}{2}|
++4|\cos\tfrac{k_x}{2}\cos\tfrac{k_z}{2}|\le 4+8=12$; equality forces
+$\cos k_x=\cos k_y=1$ and $|\cos\tfrac{k_{y,z}}{2}|=1$, i.e.\ $k=0$ in
+$[-\pi,\pi]^3$, where $A(0)\mathbf 1=12\,\mathbf 1$ by regularity. This is
+Lemma \ref{lem:head} records the \emph{upper bound}; uniqueness of the
+maximizer and of the exact band head are proved in Appendix~\ref{app:E},
+without numerics.
+
+\section{Normalization dictionary and reproducibility}\label{app:D}
+\textbf{Dictionary.} The theorems are statements about
+$H(\mu)=\sum_\ell C_2(\ell)+\mu\sum_p(2-\Re\Tr U_p)$.
+For $H_{\rm KS}=\frac{g^2}{2}\sum E^2-\frac{1}{2g^4}\sum_p(\Tr U_p+\Tr
+U_p^\dagger)$ at $a=1$: $\mu=2g^{-6}$, physical energy
+$=\frac{g^2}{2}\times$(dimensionless). If an alternative convention
+rescales the expansion parameter by a constant, $\mu'=c\mu$, the theorem
+reads $\Delta=3-\frac{71}{105\,c^{2}}\mu'^{2}+O_L(\mu'^{3})$. Conventions
+quoting $\mu'=g^{-4}$ arise from applying the same dimensionless form to
+$\widetilde H=\frac{2}{g^2}H_{\rm KS}$ with $g$ reparametrized so that the
+plaquette coefficient reads $-\mu'\sum_p\Re\Tr U_p$ with $\mu'=g^{-4}$
+(a different overall normalization of $H_{\rm KS}$); the dictionary must then be
+applied to the full dimensionless Hamiltonian, not to the symbol $\mu$
+alone --- convert the Hamiltonian, not just the coupling.
+
+\textbf{Reproducibility.} \texttt{code/verify\_anchors.py} proves
+$\|\chi(U_p)\|^2=1$, $\langle p|V|\Omega\rangle=-1$,
+$\langle p|V|q\rangle=0$, and the $c_s^2$ by two independent exact methods
+(Weyl integration and Weingarten); \texttt{code/verify\_identity.py}
+builds the $375\times375$ operator at $L=5$ over $\mathbb Q$, verifies
+$M_2=(\tfrac13+v)A+cI$ entry-by-entry, the $2\times2$ mixing consistency
+$\langle u|\tfrac13J|u\rangle=|\mathcal P|/3$, and $c_2=-71/105$;
+\texttt{code/verify\_census.py} runs the $L=4$ census
+$192+48=240$ and the winding touching count. All computations are exact
+rational arithmetic (SymPy); no numerical fitting, no floating-point
+assumptions.
+
+\section{Band-head uniqueness: Perron--Frobenius and curvature}
+\label{app:E}
+\begin{lemma}[maximal eigenvalue, strict form]\label{lem:headE}
+For every $L\ge4$ and every $k\in[-\pi,\pi)^3$,
+$\lambda_{\max}(A(k))\le12$, with equality \emph{if and only if} $k=0$;
+moreover $\lambda_{\max}(A(0))=12$ is \emph{simple} and its eigenline is
+spanned by the uniform orientation vector.
+\end{lemma}
+\begin{proof}
+\emph{(1) Comparison.} For a Hermitian matrix $B$, writing $|B|$ for the
+entrywise absolute value,
+$\lambda_{\max}(B)=\max_{\|x\|=1}\langle x,Bx\rangle\le
+\max_{\|x\|=1}|\langle x,Bx\rangle|\le
+\max_{\|y\|=1,\,y\ge0}\langle y,|B|y\rangle=\rho(|B|)$,
+the last step being the Collatz--Wielandt characterization of the Perron
+root of a nonnegative matrix. Applied to $B=A(k)$: every entry of $|A(k)|$
+is bounded by the corresponding entry of $A(0)$ (diagonals:
+|$2\cos k_x+2\cos k_y|\le4$; off-diagonals: products of cosines bounded by
+$4$), and the spectral radius is monotone on nonnegative matrices, so
+$\lambda_{\max}(A(k))\le\rho(|A(k)|)\le\rho(A(0))$.
+
+\emph{(2) Irreducibility.} The touching graph of plaquettes on $\mathbb T_L^3$
+is connected: in one plane the plaquettes form the $L\times L$ grid under
+link-sharing, and the three plane-families meet at every site. Hence $A(0)$
+is irreducible; $12$-regularity gives $A(0)\mathbf1=12\mathbf1$, so
+$\rho(A(0))=12$, and Perron--Frobenius makes $12$ a simple eigenvalue with
+strictly positive eigenvector; regularity then forces that eigenvector to be
+$\mathbf1$.
+
+\emph{(3) Rigidity of equality.} Suppose $\lambda_{\max}(A(k))=12$. Then
+equality holds throughout (1), in particular $\rho(|A(k)|)=\rho(A(0))$. If
+some entry of $|A(k)|$ were strictly smaller than that of $A(0)$, then,
+$A(0)$ being irreducible, the strict monotonicity of the Perron root (add a
+nonnegative perturbation supported on that entry and use the Perron eigenvector
+of $|A(k)|$, which is positive on the irreducible support) gives
+$\rho(|A(k)|)<\rho(A(0))$, contradiction. Hence $|A(k)|=A(0)$ entrywise.
+The off-diagonal equalities give $|\cos\tfrac{k_i}{2}|=1$ for each $i$;
+for $k_i\in[-\pi,\pi)$ this forces $k_i=0$ (the diagonal equalities then
+hold automatically).
+\end{proof}
+
+\begin{proposition}[exact band head for small $\mu$]\label{prop:headexact}
+Let $L\ge5$. There are $\mu_1(L)>0$ and $\kappa(L)>0$ such that for
+$0<\mu<\mu_1(L)$ the minimum of the deformed $E=3$ band over the discrete
+momentum lattice $k\in\frac{2\pi}{L}\mathbb Z^3\cap[-\pi,\pi)^3$ is attained
+uniquely at $k=0$, in the uniform orientation mode, and the gap to the next
+band minimum is at least $\kappa(L)\mu^2$.
+\end{proposition}
+\begin{proof}
+By Lemma \ref{lem:headE}(2) the eigenvalue $12$ of $A(0)$ is simple, so
+$\lambda_{\max}(A(k))$ is real-analytic near $k=0$ (analytic perturbation of
+a simple eigenvalue of the $3\times3$ fiber). Differentiating the
+characteristic polynomial $p(k,\lambda)=\det(\lambda-A(k))$ at $(0,12)$:
+with $A(k)=A(0)+A_2(k)+O(|k|^4)$, $A_2$ collecting the quadratic terms
+($\operatorname{diag}$ entries $-k_x^2-k_y^2$ etc.,\ off-diagonal entries
+$-\tfrac12(k_y^2+k_z^2)$ etc.), first-order perturbation theory on the simple
+ eigenpair $(12,\mathbf1/\sqrt3)$ gives
+$\lambda_{\max}(A(k))=12+\langle\mathbf1,A_2(k)\mathbf1\rangle/3+O(|k|^4)
+=12-\tfrac{4}{3}|k|^2+O(|k|^4)$: the diagonal part contributes
+$-\tfrac13\cdot2|k|^2$ and the off-diagonal part $-\tfrac13\cdot2|k|^2$,
+summing to the isotropic $-\tfrac43|k|^2$ (exact rational; the cubic term
+vanishes by the inversion symmetry $k\mapsto-k$ of the fiber; verified in
+\texttt{code/verify\_bandhead.py}).
+Since $\tfrac13+v=-\tfrac1{21}<0$, the lowest band function obeys,
+uniformly in $k$ (Analyticity subsection of Sec.~\ref{sec:setup}),
+$E_{\min}(\mu,k)=3+\mu^2[(\tfrac13+v)\lambda_{\max}(A(k))+c]+O(\mu^3)$ with
+the $O(\mu^3)$ constant depending only on $L$ (finite lattice, bounded
+perturbation). Hence for $k\ne0$,
+$E_{\min}(\mu,k)-E_{\min}(\mu,0)
+=\mu^2\cdot\tfrac{1}{21}\cdot\tfrac{4}{3}|k|^2+O(\mu^2|k|^4)+O(\mu^3)
+=\tfrac{4}{63}\mu^2|k|^2+O(\mu^2|k|^4)+O(\mu^3)$.
+On the discrete lattice the smallest nonzero $|k|$ is $2\pi/L$, so choosing
+$\mu_1(L)$ with $C_{\rm rem}\,\mu_1<\tfrac{4}{63}(2\pi/L)^2$ makes the right
+side strictly positive for every $k\ne0$, with margin $\kappa(L)\mu^2$.
+Uniqueness of the maximizer at $k=0$ is Lemma \ref{lem:headE}(2).
+\end{proof}
+
+\section{Exhaustion of second-order intermediate states}\label{app:F}
+The second-order effective operator on the $E=3$ eigenspace is
+$M_2=-P\,H_M\,R_0\,H_M\,P$ restricted to the cluster with the vacuum
+channel separated, $R_0$ the reduced resolvent of $H_E$ at $3$ on
+$\mathcal M\ominus$ vacuum directions; every claim about
+$M_2$ below is about matrix elements of this reduced operator between
+plaquette states. The intermediate-state enumeration in
+Proposition~\ref{prop:exhaust} is stated for the \emph{unreduced}
+second-order expression $P\,H_M\,(H_E-3)^{-1}H_M\,P$ before vacuum
+subtraction; channel (i) there is precisely the term removed by the
+subtraction and reappears as the normalization correction of
+Section~5.1.
+
+\begin{lemma}[intermediate selection]\label{lem:exhaust1}
+If $\langle n|H_M|p\rangle\ne0$ for a plaquette state $|p\rangle$ and a
+gauge-invariant eigenstate $|n\rangle$ of $H_E$, then for some plaquette
+$q$, $|n\rangle$ has an index chain supported in
+$\mathrm{supp}(p)\cup\mathrm{supp}(q)$ in which every link of
+$\mathrm{supp}(q)\setminus\mathrm{supp}(p)$ carries spin $\tfrac12$, every
+link of $\mathrm{supp}(p)\cap\mathrm{supp}(q)$ carries spin $0$ or $1$, and
+every link of $\mathrm{supp}(p)\setminus\mathrm{supp}(q)$ carries spin
+$\tfrac12$. In particular $E(n)=\sum j(j{+}1)$ over that support.
+\end{lemma}
+\begin{proof}
+$\langle n|H_M|p\rangle=\sum_{q}\int\overline{\chi_1(n)}\,\chi_{1/2}(U_q)\,
+\chi_1(p)\,dU$. For each link $\ell$, the two plaquette
+characters $\chi_1(p)\,\chi_{1/2}(U_q)$ carry, in their tensor-network
+expansion, two fundamental slots around the closed spin-$1$ chain of $p$
+and one fundamental slot around the chain of $q$. A link in
+$\mathrm{supp}(q)\setminus\mathrm{supp}(p)$ carries exactly one
+fundamental pair; degree matching of the $U_\ell$ integral against the
+conjugate spin-$j_\ell(n)$ chain of $\overline{\chi_1(n)}$ then forces
+$j_\ell(n)=\tfrac12$. A link in $\mathrm{supp}(p)\cap\mathrm{supp}(q)$
+carries three slots (odd); the admissible intermediate spins there are the
+recoupling channels of the two fundamental legs of $q$ against the
+spin-$1$ chain of $p$ computed in Appendices A--B: the singlet channel
+($s=0$, weight $c_0^2=\tfrac14$) and the triplet channel ($s=1$, weight
+$c_1^2=\tfrac34$), so $j_\ell(n)\in\{0,1\}$ on the overlap.
+\textbf{Open (revision item R3'):} the exhaustive form of this selection
+rule --- that the recoupling channels of Appendices A--B are the \emph{only}
+nonvanishing overlap contributions, with no higher-spin chain terms ---
+is currently established by the exact full-space operator identity of
+Appendix D and the complete vertex-rule enumeration of
+Proposition~\ref{prop:exhaust}, not by a standalone link-level parity
+argument; a self-contained derivation is required before external review
+of the exhaustion proof. Rule (ii) then requires an intertwiner
+at each site of the union support; sites outside
+$\mathrm{supp}(p)\cup\mathrm{supp}(q)$ carry unmatched single $\bar U$
+factors from $\overline{\chi_1(n)}$ unless $j_\ell(n)=0$ there, giving the
+support claim.
+\end{proof}
+
+\begin{lemma}[geometric trichotomy]\label{lem:exhaust2}
+For plaquettes $p\ne q$ on $\mathbb T_L^3$, $|\mathrm{supp}(p)\cap
+\mathrm{supp}(q)|\in\{0,1\}$: distinct plaquettes share no link or exactly
+one link, never two. Hence the pairs $(p,q)$ contributing to
+$\langle p|M_2|p'\rangle$ fall into exactly three geometric classes:
+$q=p$; $q$ touching $p$ (one shared link); $q$ disjoint from $p$.
+\end{lemma}
+\begin{proof}
+Two distinct unit squares of the cubic lattice sharing two edges would
+share two adjacent edges, forcing a common vertex and two common edge
+directions, hence a common plane and a common third and fourth vertex ---
+i.e.\ the same square; or share two opposite edges, forcing the same four
+vertices and the same plane. Both give $p=q$. On $\mathbb T_L^3$ with
+$L\ge4$ the projection is injective on unit squares except for the winding
+loops of Lemma (winding census), which are excluded from the plaquette set
+by definition ($4<L$ edges). Exhaustive verification at $L=5$
+($375$ plaquettes, all pairs) is in \texttt{verify\_identity.py}.
+\end{proof}
+
+\begin{lemma}[vertex singlet rules]\label{lem:valence}
+For $j_1,j_2\in\tfrac12\mathbb N$: $\dim\mathrm{Inv}(j_1\otimes j_2)=1$ if
+$j_1=j_2$ and $0$ otherwise. For three spins,
+$\dim\mathrm{Inv}(j_1\otimes j_2\otimes j_3)=1$ if
+$|j_1-j_2|\le j_3\le j_1+j_2$ and $j_1+j_2+j_3\in\mathbb Z$, and $0$
+otherwise.
+\end{lemma}
+\begin{proof}
+Clebsch--Gordan: $j_1\otimes j_2\simeq\bigoplus_{j=|j_1-j_2|}^{j_1+j_2}j$
+(multiplicity-free); $\mathrm{Inv}$ picks the spin-$0$ summand. Two spins:
+$0$ appears iff $j_1=j_2$. Three: fuse $j_1\otimes j_2$ and pick $j_3$ in
+the range; the parity condition is $j_1+j_2+j_3\in\mathbb Z$.
+\end{proof}
+
+\begin{proposition}[channel exhaustion]\label{prop:exhaust}
+The intermediate states with nonzero contribution to the unreduced
+second-order sum before vacuum subtraction are exhausted by exactly the
+four channels computed in Sections 5.1--5.4. Channel (i) is carried
+entirely by the normalization (vacuum-subtraction) term of Section 5.1
+and does not enter $M_2$; channels (ii)--(iv) exhaust the intermediates
+of the reduced operator $\langle p|M_2|p'\rangle$:
+\textup{(i)} the vacuum intermediate, value $-\tfrac13$ per $p$
+(normalization only);
+\textup{(ii)} the same-plaquette spin-$1$ regeneration, $E(n)=8$, value
+$-\tfrac15$;
+\textup{(iii)} touching pairs, two intermediate families with shared-link
+spin $0$ ($E=\tfrac92$) and spin $1$ ($E=\tfrac{13}{2}$), each with a
+unique intertwiner, combining through the Appendix-B weights
+$c_0^2=\tfrac14$, $c_1^2=\tfrac34$ into $v=-\tfrac8{21}$;
+\textup{(iv)} disjoint pairs, unique intermediate with all eight links at
+spin $\tfrac12$, $E=6$, value $-\tfrac13$.
+Every admissible intermediate below has intertwiner multiplicity exactly
+$1$, so no multiplicity factors are hidden.
+\end{proposition}
+\begin{proof}
+By Lemma \ref{lem:exhaust1} any intermediate chain is supported on
+$\mathrm{supp}(p)\cup\mathrm{supp}(q)$ with spins in $\{0,1\}$ on
+$\mathrm{supp}(p)\cap\mathrm{supp}(q)$ and $\tfrac12$ elsewhere; by
+Lemma \ref{lem:exhaust2} the pair geometry is one of three cases, and the
+admissible assignments are exactly those whose every vertex passes
+Lemma \ref{lem:valence}. This is a finite check and it is executed exactly
+(integer arithmetic) in \texttt{code/verify\_intertwiners.py}:
+\emph{self} ($q=p$): $16$ assignments on the $4$-cycle; the four vertices
+are $2$-valent in the support, so Lemma \ref{lem:valence} forces adjacent
+spins equal, and going around the cycle leaves exactly two admissible
+assignments --- all-$0$ ($E=0$, channel (i)) and all-$1$ ($E=8$, channel
+(ii)); every mixed $0/1$ assignment fails at a vertex of unequal adjacent
+spins.
+\emph{Touching}: the shared link carries $s\in\{0,1\}$; the six singly
+covered links carry $\tfrac12$; the four non-shared vertices are $2$-valent
+with equal spins (pass), and the two endpoints of the shared link are
+$3$-valent with $(s,\tfrac12,\tfrac12)$, admissible for both $s=0$ and
+$s=1$ with multiplicity one, giving $E=\tfrac92$ and $E=\tfrac{13}{2}$
+with denominators $-\tfrac32$ and $-\tfrac72$. The shared link enters
+through the two singlet channels of the two fundamental legs at each
+endpoint with the squared recoupling weights $c_0^2=\tfrac14$,
+$c_1^2=\tfrac34$ of Appendix~B, so the summed touching value is
+$v=\tfrac{1/4}{-3/2}+\tfrac{3/4}{-7/2}=-\tfrac16-\tfrac{3}{14}
+=-\tfrac{8}{21}$, matching Section 5.3 exactly (machine-checked).
+\emph{Disjoint}: both squares regenerate the all-$\tfrac12$ network
+(unique invariant per square by the $2$-valent rule), $E=6$, denominator
+$-3$, value $-\tfrac13$, matching Section 5.4 (machine-checked).
+Multiplicities: $1$ (self), $12$ (touching, $12$-regularity),
+$|\mathcal P|-13$ (disjoint), matching \eqref{eq:M2}. No other pair
+geometry exists (Lemma \ref{lem:exhaust2}) and no other spin assignment on
+these supports passes Lemma \ref{lem:valence}, so the list is exhaustive.
+\end{proof}

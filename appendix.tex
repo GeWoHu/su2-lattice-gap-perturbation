@@ -1,0 +1,28 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+\renewcommand{\theequation}{A\arabic{equation}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\G}{{\mathrm{SU}}(2)}
+\title{\bf Standalone Proof Appendix\\
+for ``Exact second-order strong-coupling expansion of the spectral gap\\
+of $\G$ Kogut--Susskind lattice gauge theory on the three-torus''}
+\author{Campaign YM-04.6 --- revised fork for external review}
+\date{\today}
+\begin{document}
+\maketitle
+\noindent\emph{Companion document.} Cross-references of the form ``Lemma
+3.3'', ``Lemma 4.1'', ``Lemma 6.2'' of the main manuscript refer to
+orthonormality of the Wilson-loop basis, first-order cancellation, and the
+band-head lemma respectively; their statements are recalled where used.
+All computations in this appendix are self-contained and reproducible with
+\texttt{code/} of the same directory.
+\input{appendix-body}
+\end{document}

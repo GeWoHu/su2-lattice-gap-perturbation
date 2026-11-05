@@ -1,0 +1,21 @@
+== 1. FUSION/SELECTION PRIMITIVES (exact Weyl calculus) ==
+  OK: fusion, linear-link vanishing, odd-half selection.
+== 2. BUBBLE RECOUPLING c_s^2 via wigner_6j (independent convention check) ==
+  c0^2 = 1/4  c1^2 = 3/4
+  v = -(2/3)c0^2 - (2/7)c1^2 = -8/21  (denominators 3-9/2=-3/2, 3-13/2=-7/2)
+== 3. E=3 CLOSED 4-EDGE LOOPS ON T^3_L (exact enumeration) ==
+  L=4: origin-based closed 4-loops = 15 = plaquettes 12 + winding 3 (global plaquettes 192)
+    global count: 192 plaquettes + 48 winding = 240 candidate E=3 states at L=4
+  L=5: origin-based closed 4-loops = 12 = plaquettes 12 + winding 0 (global plaquettes 375)
+  L=6: origin-based closed 4-loops = 12 = plaquettes 12 + winding 0 (global plaquettes 648)
+== 4. L=4 WINDING SECTOR (block-diagonality + touching census) ==
+  OK: <p|V|w> = 0 exactly (containment census empty); winding block decouples at order mu.
+  per-winding-link touching census (first winding): {0: 176, 1: 16}
+  OK: each winding touches 16 plaquettes, each sharing exactly 1 link (16 bubble channels, each = v).
+== 4b. SECOND-ORDER PLAQUETTE-WINDING DECOUPLING (exact) ==
+  OK: eps|_{Sym^2} = 0 (kills chi_1(w) channels with an uncovered winding link).
+  OK: |p cap w| + |s cap w| <= 2 < 4 exhausts all channel geometries;
+      <p|M2|w> = 0 exactly for all 192x48 plaquette-winding pairs.
+== 5. COEFFICIENT IDENTITIES (exact) ==
+  24v + 127/15 = -71/105 = -71/105 OK; branch boundary v=-1/3: v=-8/21 <-1/3 OK
+ALL INDEPENDENT CHECKS PASS (winding 2nd-order value handled separately).

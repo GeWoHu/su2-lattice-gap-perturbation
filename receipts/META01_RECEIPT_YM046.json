@@ -1,0 +1,123 @@
+{
+  "mission": "YM-04.6",
+  "receipt": "META-01 mechanical self-check (FINAL)",
+  "generated": "2026-11-05T14:37 CST",
+  "checks": {
+    "artifact:manuscript.tex": {
+      "pass": true,
+      "detail": "b5786e972667253b"
+    },
+    "artifact:manuscript.pdf": {
+      "pass": true,
+      "detail": "9f518daaa494f7ce"
+    },
+    "artifact:appendix-body.tex": {
+      "pass": true,
+      "detail": "9d28e6649203614b"
+    },
+    "artifact:appendix.tex": {
+      "pass": true,
+      "detail": "ff89940fef973c82"
+    },
+    "artifact:code/verify_anchors.py": {
+      "pass": true,
+      "detail": "b2b1746266daa58f"
+    },
+    "artifact:code/verify_identity.py": {
+      "pass": true,
+      "detail": "695355179d6bf091"
+    },
+    "artifact:code/verify_census.py": {
+      "pass": true,
+      "detail": "c55f6664c4ab35dd"
+    },
+    "artifact:code/verify_bandhead.py": {
+      "pass": true,
+      "detail": "4701853179f95863"
+    },
+    "artifact:code/verify_intertwiners.py": {
+      "pass": true,
+      "detail": "bebe7383f83ab1a0"
+    },
+    "artifact:evidence/REFEREE_YM046.md": {
+      "pass": true,
+      "detail": "11537ab1d23f489e"
+    },
+    "artifact:evidence/REFEREE_YM046_REREVIEW.md": {
+      "pass": true,
+      "detail": "2b51e129d3e3ea41"
+    },
+    "artifact:evidence/REFEREE_YM046_FINAL.md": {
+      "pass": true,
+      "detail": "e089e251f90dfbb5"
+    },
+    "artifact:evidence/REFEREE_YM046_FINAL2.md": {
+      "pass": true,
+      "detail": "0be5ac3630e322b9"
+    },
+    "exact:anchors_pass": {
+      "pass": true,
+      "detail": "receipt-verified (exact markers)"
+    },
+    "exact:identity_c2_71_105": {
+      "pass": true,
+      "detail": "receipt-verified (exact markers)"
+    },
+    "exact:census_pass": {
+      "pass": true,
+      "detail": "receipt-verified (exact markers)"
+    },
+    "exact:bandhead_curvature_4_3": {
+      "pass": true,
+      "detail": "receipt-verified (exact markers)"
+    },
+    "exact:conversions_142_105_284_315": {
+      "pass": true,
+      "detail": "receipt-verified (exact markers)"
+    },
+    "exact:intertwiner_exhaustion": {
+      "pass": true,
+      "detail": "receipt-verified (exact markers)"
+    },
+    "archive:ym04_hash_check": {
+      "pass": true,
+      "detail": "3/3 fork-time hashes"
+    },
+    "referee:terminal_verdict": {
+      "pass": true,
+      "detail": "terminal round FINAL2, named open items R3' + KSS76"
+    }
+  },
+  "mechanical_all_pass": true,
+  "referee_verdicts": {
+    "initial": "REVISION REQUIRED",
+    "rereview": "REVISION REQUIRED",
+    "final": "REVISION REQUIRED",
+    "final2": "HUMAN-REVIEW READY"
+  },
+  "archive_hash_details": [
+    {
+      "file": "../ym04/manuscript.tex",
+      "expected_sha256": "c64ead89118d4d6d0b6370ea5e12a081f045f5bb7e12a779fcd72b274d32287a",
+      "actual_sha256": "c64ead89118d4d6d0b6370ea5e12a081f045f5bb7e12a779fcd72b274d32287a",
+      "ok": true
+    },
+    {
+      "file": "../ym04/appendix.tex",
+      "expected_sha256": "ff89940fef973c82471c1b44c9c6ccbf17ad3e578023c2668d4d2ea4e136ef15",
+      "actual_sha256": "ff89940fef973c82471c1b44c9c6ccbf17ad3e578023c2668d4d2ea4e136ef15",
+      "ok": true
+    },
+    {
+      "file": "../ym04/appendix-body.tex",
+      "expected_sha256": "4d2b03442573ac8b86241d950a882ea60da515cfaf2eba446bba14f6882d156e",
+      "actual_sha256": "4d2b03442573ac8b86241d950a882ea60da515cfaf2eba446bba14f6882d156e",
+      "ok": true
+    }
+  ],
+  "named_open_items": [
+    "R3': standalone exhaustive derivation of the recoupling-channel selection rule (Appendix F)",
+    "KSS76 library-level novelty scan (DOI 10.1016/0550-3213(76)90586-1); NOVELTY UNRESOLVED"
+  ],
+  "note": "Earlier mechanical_all_pass=*** entries were receipt-generator bugs (bool subscripted during iteration; dict-value aggregation; one expected hash transcribed ...156a instead of recorded ...156e). Underlying archive always intact; verified against receipts/ym04_source_hashes.txt fork-time record."
+}

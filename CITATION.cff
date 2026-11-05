@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite the software repository as follows."
+title: "Exact Second-Order Strong-Coupling Expansion of the Spectral Gap of Kogut-Susskind Lattice Gauge Theory on the Three-Torus"
+type: software
+authors:
+  - name: "Gerald (full author name to be supplied before submission)"
+repository-code: "https://github.com/GeWoHu/su2-lattice-gap-perturbation"
+date-released: 2026-11-05
+abstract: >-
+  Fixed-volume strong-coupling expansion of the spectral gap of SU(2)
+  Kogut-Susskind lattice gauge theory on the three-torus with exact
+  second-order coefficient -142/105 (relative 284/315), unique band head
+  at zero momentum, and a complete machine-checked verification package.
+  Novelty classification unresolved pending comparison with
+  Kogut-Sinclair-Susskind (1976); no originality claimed.
+keywords:
+  - lattice gauge theory
+  - strong-coupling expansion
+  - spectral gap
+  - perturbation theory
+  - exact verification

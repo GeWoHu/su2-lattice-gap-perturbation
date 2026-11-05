@@ -1,0 +1,10 @@
+Weyl: ||ReTr U_p||^2 = 1, ||chi_1(hol)||^2 = 1  (character orthonormality)
+brute force: <W_p|W_p> = 1  => physical plaquette states need NO rescaling
+<p|V|Omega> = -1  (=-||ReTr U_p||^2); '1/8' and '-1/2' were pairing artifacts
+int Tr(U_q)^2 = 1  => <p|V|W_q W_p> = -1: unit regeneration CONFIRMED physical
+<p|V|chi_1(hol)> = -1: unit chi_1 regeneration CONFIRMED (fusion chi_h^2 = 1 + chi_1)
+touching: c0^2=1/4, c1^2=3/4, v=-8/21 stand (convention-free F-matrix)
+A(k): lambda_max(0)=12 exact; grid 41^3: max <= 12 with equality only at k=0 (Gershgorin-consistent)
+Gershgorin (ym036): lam_max(A(k)) <= 12, equality iff k=0 => head at k=0
+YM-03.6 formula check: 24v + 127/15 = -71/105 = -71/105 OK
+ALL YM-03.8 ENGINE CHECKS PASS: normalization VINDICATED (unit amplitudes exact)

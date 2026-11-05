@@ -1,0 +1,11 @@
+SELF (q=p): admissible intermediates:
+  spins (0, 0, 0, 0) dim 1 E = 0
+  spins (1, 1, 1, 1) dim 1 E = 8
+TOUCHING: admissible intermediates:
+  shared spin 0: dim 1, E = 9/2, denominator 3-E = -3/2
+  shared spin 1: dim 1, E = 13/2, denominator 3-E = -7/2
+DISJOINT: unique intermediate: all 1/2, dim 1, E = 6, denominator 3-E = -3
+touching channel: (1/4)/(-3/2) + (3/4)/(-7/2) = -8/21 = v = -8/21 OK: True
+self regeneration: 1/(3-8) = -1/5 = -1/5 OK
+disjoint: 1/(3-6) = -1/3 = -1/3 OK
+ALL INTERTWINER EXHAUSTION CHECKS PASS (exact integers, complete enumeration)

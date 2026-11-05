@@ -1,0 +1,529 @@
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\G}{{\mathrm{SU}}(2)}
+\DeclareMathOperator{\Ad}{Ad}
+\title{\bf Exact second-order strong-coupling expansion of the spectral gap\\
+of $\G$ Kogut--Susskind lattice gauge theory on the three-torus}
+\author{Revised draft for external human review --- campaign YM-04.6\\
+\small (verification artifacts accompany this manuscript; original YM-04 archive preserved unchanged)}
+\date{\today}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We compute the first two nontrivial orders of the strong-coupling expansion of
+the spectral gap of the pure $\G$ Kogut--Susskind Hamiltonian on the periodic
+three-torus $\mathbb T_L^3$ of side $L$, in the dimensionless normalization
+$H(\mu)=H_E+\mu H_M$ with $H_E=\sum_{\ell}C_2(\ell)$ and
+$H_M=\sum_p(2-\Re\Tr U_p)$; the dictionary to the Kogut--Susskind coupling at
+unit lattice spacing is $\mu=2g^{-6}$, so that in physical units
+$\Delta_{\rm phys}(g,L)=\tfrac32 g^{2}-\tfrac{142}{105}\,g^{-10}+O(g^{-16})$. For every $L\ge 5$ the gap above the vacuum obeys
+\[
+\Delta(\mu,L)\;=\;3-\frac{71}{105}\,\mu^2+O_L(\mu^3),\qquad \mu\to 0^+,
+\]
+with an $L$-independent coefficient; the band head is the translation-invariant
+one-plaquette excitation. At $L=4$ an additional winding sector enters the
+$E=3$ eigenspace and the gap is governed by that sector with coefficient at
+most $-16/21$. All group-theoretic coefficients are exact rational numbers
+derived from Peter--Weyl orthogonality, $6j$ recoupling, and the
+$\G$ Weingarten calculus; every step is machine-verifiable in exact rational
+arithmetic. The statement is a fixed-volume perturbative theorem; no
+uniformity in $L$ and no continuum limit are claimed.
+\end{abstract}
+
+\section{Introduction and result}
+Strong-coupling expansions of Hamiltonian lattice gauge theory go back to
+Kogut and Susskind \cite{KS75} and to the glueball calculations of Kogut,
+Sinclair and Susskind \cite{KSS76}; textbook accounts appear in
+\cite{MM94,DZ83}. Within that framework we obtain an exact coefficient of the
+second-order expansion of the spectral gap, together with a complete
+finite-volume band analysis, in a normalization fixed once and for all from
+the physical Hilbert space. The exact rational value and the finite-volume
+band-head statement are the objects of interest; their status relative to the
+published literature is discussed in Section~9 and in the accompanying
+novelty ledger.
+
+Let $\Lambda_L=(\mathbb Z/L\mathbb Z)^3$, $L\ge 4$, with link set $E$ and
+plaquette set $\mathcal P$ ($|\mathcal P|=3L^3$). The physical Hilbert space
+is $\mathcal H_0=\{f\in L^2(\G^{E},dU)\}$, the gauge-invariant subspace,
+$dU$ the product Haar measure. The Hamiltonian is
+\begin{equation}\label{eq:H}
+H(\mu)\;=\;H_E+\mu H_M,\qquad
+H_E=\sum_{\ell\in E}C_2(\ell),\qquad
+H_M=\sum_{p\in\mathcal P}\bigl(2-\Re\Tr U_p\bigr),
+\end{equation}
+where $C_2(\ell)$ is the (left) Casimir on link $\ell$, acting as $j(j+1)$ on
+the Peter--Weyl component of spin $j$, and $U_p$ is the ordered holonomy
+around plaquette $p$. $H_M\ge 0$, $H_E\ge 0$; $H(\mu)$ is self-adjoint,
+bounded below, with discrete spectrum at fixed $L$ ($H_E$ has compact
+resolvent, $H_M$ is bounded). The vacuum $\Omega\equiv 1$ has $H(0)\Omega=0$;
+for $\mu>0$ small it is the unique ground state (analytic perturbation
+theory, Section~3).
+
+\begin{theorem}[main]\label{thm:main}
+For every fixed $L\ge 5$ there exists $\mu_0(L)>0$ such that for
+$0<\mu<\mu_0(L)$ the spectral gap of $H(\mu)$ above its ground state is
+\[
+\Delta(\mu,L)\;=\;3-\frac{71}{105}\,\mu^2+O_L(\mu^3),\qquad \mu\to0^+ .
+\]
+The coefficient $-71/105$ is independent of $L$. The second-order band
+minimum is attained at crystal momentum $k=0$, in the uniform
+orientation-symmetric one-plaquette mode, uniquely among band minima at
+second order.
+\end{theorem}
+
+\begin{corollary}[physical units]\label{cor:phys}
+With $H_{\rm KS}=\frac{g^2}{2}\sum_\ell E^2(\ell)-\frac{1}{2g^4}\sum_p
+(\Tr U_p+\Tr U_p^\dagger)$ at $a=1$ and $L\ge5$,
+\[
+\Delta_{\rm phys}(g,L)
+=\frac{g^2}{2}\,\Delta\bigl(2g^{-6},L\bigr)
+=\frac{3}{2}\,g^{2}-\frac{142}{105}\,g^{-10}+O_L(g^{-16})
+=\frac{3}{2}\,g^{2}\Bigl(1-\frac{284}{315}\,g^{-12}+O_L(g^{-18})\Bigr),
+\qquad g\to\infty .
+\]
+Every conversion factor is exact rational; a source quoting
+$\mu=g^{-4}$ for the same operator differs by the factor $c=2$ and must be
+rescaled by $c_2\mapsto c_2/c^{2}$ before comparison.
+\end{corollary}
+
+\begin{theorem}[$L=4$ exception]\label{thm:L4}
+At $L=4$ the $E=3$ eigenspace of $H_E$ contains, besides the $192$
+plaquette states, $48$ straight winding-loop states. The spectral gap is then
+governed by the winding sector, whose second-order coefficient satisfies
+$c_2(L{=}4)\le -16/21<-71/105$; the exact value of $c_2(L{=}4)$ is not
+determined in this paper (Section~8).
+\end{theorem}
+
+Both theorems are fixed-volume statements. They say nothing about
+$\inf_L\Delta(\mu,L)$ uniformity, and nothing about the continuum limit.
+Section~9 states the precise scope boundary.
+
+\section{Setup, conventions, and spectral preliminaries}\label{sec:setup}
+\subsection{Hilbert space and gauge invariance}
+$\mathcal H=L^2(\G^E,dU)$ with $dU=\prod_\ell dU_\ell$ the product of Haar
+measures normalized to $1$. Gauge transformations act by
+$(g\cdot f)(U)=f(\{\gamma_\ell^{-1}U_\ell\gamma_{\ell'}\})$ for vertex
+functions $\gamma_x\in\G$; $\mathcal H_0$ is the invariant subspace. In the
+Peter--Weyl decomposition
+\[
+L^2(\G)\;\cong\;\widehat{\bigoplus}_{j\in\frac12\mathbb N}
+V_j\otimes V_j^*,\qquad C_2\big|_{V_j}=j(j+1),
+\]
+gauge invariance means: at each vertex $x$, the tensor product of the
+$V_j$'s carried by links incident to $x$ contains the singlet, and the state
+is the corresponding intertwiner contraction. A basis of $\mathcal H_0$ is
+labelled by flux assignments $\{j_\ell\}$ plus intertwiners at vertices; the
+$H_E$-eigenvalue is $\sum_\ell j_\ell(j_\ell+1)$.
+
+\subsection{Normalization}
+The primary object of this paper is the dimensionless family \eqref{eq:H}
+with $\mu>0$ as the expansion parameter; $C_2(\ell)=E^2(\ell)$ on class
+functions. Dictionary to the Kogut--Susskind Hamiltonian
+$H_{\rm KS}=\frac{g^2}{2}\sum_\ell E^2(\ell)
+-\frac{1}{2g^4}\sum_p(\Tr U_p+\Tr U_p^\dagger)$ at $a=1$: in units of
+$g^2/2$,
+\[
+\frac{2}{g^2}H_{\rm KS}+\frac{4|\mathcal P|}{g^6}
+=\sum_\ell C_2(\ell)+\frac{2}{g^6}\sum_p\bigl(2-\Re\Tr U_p\bigr),
+\qquad\text{i.e.}\quad \mu=\frac{2}{g^6} .
+\]
+Some references (and the earlier notes of this campaign) absorb the factor of
+$2$ into the coupling and quote $\mu=g^{-4}$ under the equally standard
+convention $H_B=-g^{-4}\sum_p\Re\Tr U_p$. All results below are statements
+about $H(\mu)$ itself; a change of convention $\mu\mapsto c\,\mu$ rescales
+the coefficient as $c_2\mapsto c_2/c^2$. Conversion factors to
+$\lambda=\tfrac12 g^{-4}$-type variables are tabulated in Appendix~D.
+
+\subsection{Analyticity}
+$H_M$ is bounded ($\|\Re\Tr U_p\|_\infty\le 2$), so $H(\mu)$ is a bounded
+analytic family for $\mu\in\mathbb R$ in the norm-resolvent sense at fixed
+$L$. The spectrum is discrete; simple eigenvalues and isolated clusters admit
+convergent power series in $\mu$ (Kato). The vacuum cluster and the
+$E=3$ cluster of $H(0)$ are separated by $3$, so for $\mu$ small the gap is
+the bottom of the deformed $E=3$ cluster minus the deformed ground energy,
+each analytic in $\mu$ on the real axis (the $E=3$ cluster is degenerate; its
+splitting is handled by degenerate perturbation theory, which yields the
+expansions of Theorem~\ref{thm:main} with $O_L(\mu^3)$ remainder).
+
+\section{The $E=3$ eigenspace and Wilson-loop orthonormality}\label{sec:E3}
+\begin{lemma}[flux classification]\label{lem:flux}
+The $E=3$ eigenspace of $H_E$ on $\mathcal H_0$ is spanned by gauge-invariant
+states carrying flux $j=\tfrac12$ on exactly four links and $0$ elsewhere.
+For $L\ge 5$ the supporting links form a plaquette; for $L=4$ they form a
+plaquette or a straight winding loop of length $4$.
+\end{lemma}
+\begin{proof}
+$3=\sum_\ell j_\ell(j_\ell+1)$ with each $j_\ell(j_\ell+1)\in\{0,\tfrac34,2,
+\tfrac{15}{4},\dots\}$ forces four links with $j=\tfrac12$ (since
+$2+\tfrac34<3$ and $\tfrac{15}4>3$, and $3/4$ does not divide the remainder
+$1$ otherwise). Gauge invariance requires the total flux at each vertex to
+contain a singlet, so each vertex carries an even number ($0$ or $2$, as the
+$j$'s are $\tfrac12$) of flux links: the support is a closed loop of length
+$4$. On $\mathbb T_L^3$ a closed nearest-neighbor loop of length $4$ is a
+plaquette, except when $L=4$ and the loop wraps once in a coordinate
+direction (a straight winding loop).
+\end{proof}
+
+\begin{lemma}[singlet uniqueness and the Wilson-loop basis]\label{lem:singlet}
+For a fixed closed loop $C=(\ell_1,\dots,\ell_4)$ with $j=\tfrac12$ on each
+link, the space of gauge-invariant tensors is one-dimensional, spanned by
+the Wilson loop function $\chi_{1/2}(U_C)=\Tr(U_{\ell_1}\cdots U_{\ell_4})$.
+\end{lemma}
+\begin{proof}
+Each interior vertex of the loop pairs exactly two $V_{1/2}$ factors, whose
+singlet space is one-dimensional ($V_{1/2}\otimes V_{1/2}\supset V_0$ with
+multiplicity one, via the invariant $\varepsilon\in V_{1/2}\otimes V_{1/2}$).
+The product of the four vertex singlets, propagated around the loop, is the
+cyclic index contraction $\Tr(U_{\ell_1}\cdots U_{\ell_4})$; uniqueness of
+the singlet at each vertex forces any intertwiner to be a scalar multiple of
+it.
+\end{proof}
+
+\begin{lemma}[orthonormality]\label{lem:gram}
+For loops $C,C'$ of length $4$ as in Lemma \ref{lem:flux},
+\[
+\bigl\langle \chi(U_C),\chi(U_{C'})\bigr\rangle_{L^2(\G^E)}
+=\delta_{CC'} .
+\]
+\end{lemma}
+\begin{proof}
+$\overline{\chi(U_{C'})}=\chi(U_{C'}^\dagger)$, so the inner product is the
+integral of a product carrying one $U$-type factor from $\chi(U_C)$ and, on
+$C'$, one $\bar U$-type factor from $\overline{\chi(U_{C'})}$. If $C\ne C'$,
+some link $\ell\in C\setminus C'$ carries a single $U$-type factor and no
+$\bar U$-type factor; the remaining integrations produce a free matrix index
+on $\ell$, and $\int U^a{}_b(U_\ell)\,dU_\ell=0$ because the spin-$\tfrac12$
+matrix coefficient has no invariant vector. Hence the integral vanishes.
+If $C=C'$, Peter--Weyl orthogonality
+$\int U^a{}_b\,\overline{U^c{}_d}\,dU=\frac12\delta^a_d\delta^c_b$ is
+applied link by link: each of the four links contributes a factor $\tfrac12$
+and each of the four successive index sums a factor $2$, so the closed loop
+evaluates to $2^4\cdot 2^{-4}=1$. The full index chain is spelled out in
+Appendix~A and machine-verified by two independent exact methods (Weyl
+integration and Weingarten) in \texttt{verify\_anchors.py} \cite{YM04code}.
+\end{proof}
+The proof of the diagonal case is spelled out with all index positions in
+Appendix~A; it is also machine-verified by two independent exact methods
+(Weyl integration and Weingarten) in \texttt{verify\_anchors.py}
+\cite{YM04code}.
+
+\begin{definition}\label{def:basis}
+For $L\ge5$ let $|p\rangle:=\chi_{1/2}(U_p)$, $p\in\mathcal P$, the
+orthonormal basis of the $E=3$ eigenspace $\mathcal M$; $P$ denotes the
+orthogonal projection onto $\mathcal M$. For $L=4$ add winding states $|w\rangle$.
+\end{definition}
+
+\section{First order}\label{sec:first}
+Write $V:=H_M-2|\mathcal P|\,\mathbf 1=-\sum_{q}\chi(U_q)$; $H(\mu)=H_E+2|\mathcal P|\mu+\mu V$.
+\begin{lemma}[first-order cancellation]\label{lem:first}
+$PVP=0$ on $\mathcal M$, and $\langle\Omega|V|\Omega\rangle=0$; moreover
+$\langle p|V|\Omega\rangle=-\delta_{pq}$ summed, i.e.\
+$\langle p|V|\Omega\rangle=-1$ for each $p$.
+\end{lemma}
+\begin{proof}
+$\langle p|V|q\rangle=-\sum_r\int\chi(U_p)\,\chi(U_r)\,\overline{\chi(U_q)}\,dU$.
+The integrand has total degree $(2,1)$ in the fundamental matrix coefficients
+(one $\bar U$-type factor from $\overline{\chi(U_q)}$, two $U$-type).
+Under the center element $z=-\mathbf 1\in\G$ the integrand acquires a factor
+$z^{2}\bar z=z$ (i.e.\ $-1$), while the measure is invariant; hence every
+integral vanishes. The same parity argument kills
+$\langle\Omega|V|\Omega\rangle$ (degree $(1,0)$). For
+$\langle p|V|\Omega\rangle=-\sum_r\int\chi(U_p)\overline{\chi(U_r)}\,dU=-\sum_r\delta_{pr}=-1$
+by Lemma \ref{lem:gram}.
+\end{proof}
+Thus the first-order correction to the band is exactly $0$, and the first
+correction to the ground energy is second order (Section~6).
+
+\section{Second-order channels}\label{sec:channels}
+Exhaustion of the intermediate spectrum --- that the four channels below are
+\emph{all} the intermediate states with nonzero matrix elements --- is not
+assumed; it is proved in Appendix~\ref{app:F},
+Proposition~\ref{prop:exhaust}, from the Peter--Weyl selection rules and a
+lattice-graph lemma.
+The second-order effective operator on $\mathcal M$ is
+\[
+M_2 \;=\; P\,V\,Q\,(3-H_E)^{-1}Q\,V\,P ,
+\]
+where $Q=1-P$ and $(3-H_E)^{-1}$ acts on $Q\mathcal H_0$ (intermediate
+states have $E_n\ge 4\cdot\tfrac12(\tfrac12+1)=3$, and $E_n=3$ states lie in
+$\mathcal M$; the resolvent is negative). We classify the intermediate
+states contributing to $\langle p|M_2|q\rangle$ by the support of the
+inserted $\chi(U_r)$ relative to $p,q$.
+
+\subsection{Vacuum intermediate}
+$|\Omega\rangle\langle\Omega|$ contributes
+$\frac{\langle p|V|\Omega\rangle\langle\Omega|V|q\rangle}{3-0}
+=\frac{1}{3}$ for every pair $(p,q)$, i.e.\ the operator $+\frac13 J$ with
+$J$ the all-ones matrix in the $|p\rangle$ basis.
+
+\subsection{Single-plaquette ($\chi_1$) intermediate, $p=q$}\label{subsec:chi1}
+With $r=p$ the insertion acts on $|p\rangle$ itself. Using the pointwise
+fusion identity for $\G$ characters,
+$\chi_{1/2}(g)^2=\chi_0(g)+\chi_1(g)$,
+\[
+-\chi(U_p)^2 \;=\; -\mathbf 1 \;-\; \chi_1(U_p),
+\qquad \chi_1(U_p):=\Tr_{\mathrm{sym}^2}\bigl(U_{\ell_1}\cdots U_{\ell_4}\bigr).
+\]
+The constant term is the vacuum intermediate of Section 5.1. The state
+$|\chi_1(p)\rangle:=\chi_1(U_p)$ is gauge-invariant, carries pure flux
+$j=1$ on each of the four links of $p$ (each link appears once, in the
+spin-$1$ representation), hence has $E_n=4\cdot 1\cdot 2=8$ and, by the
+same Peter--Weyl chain as Lemma \ref{lem:gram}, norm $1$. Thus
+$V|p\rangle\supset-|\chi_1(p)\rangle$, the regeneration amplitude is
+$\langle p|V|\chi_1(p)\rangle=-1$, and the channel contributes
+$(-1)^2/(3-8)=-\tfrac15$ on the diagonal.
+
+\subsection{Touching pairs, $p\ne q$ sharing one link}\label{subsec:touch}
+Two plaquettes sharing a link: inserting $\chi(U_r)$ with $r$ supported on
+$p\cup q$ produces intermediate states on the $7$ links of $p\cup q$ in
+which the shared link carries fused flux $s=0$ or $s=1$
+($V_{1/2}\otimes V_{1/2}=V_0\oplus V_1$) and the other six links carry
+$j=\tfrac12$. The two channels have energies
+$E_s=6\cdot\tfrac34+s(s+1)$, i.e.\ $E_0=\tfrac92$, $E_1=\tfrac{13}{2}$
+(denominators $-\tfrac32$, $-\tfrac72$), with squared amplitudes
+$c_0^2=\tfrac14$, $c_1^2=\tfrac34$ (Appendix~B, derived twice: $6j$
+recoupling and Weingarten; $c_0^2+c_1^2=1$ is the regeneration sum rule).
+With regeneration amplitudes $-c_s$, the touching-pair matrix element is
+\[
+v\;=\;\frac{c_0^2}{3-E_0}+\frac{c_1^2}{3-E_1}
+\;=\;-\frac{2}{3}\cdot\frac14-\frac{2}{7}\cdot\frac34
+\;=\;-\frac16-\frac{3}{14}\;=\;-\frac{8}{21}.
+\]
+On the cubic lattice every bond lies in exactly four plaquettes (two planes
+through the bond, two sides of each), so each plaquette shares one link with
+$4\times 3=12$ others and no two distinct plaquettes share two links; the
+touching adjacency $A$ is $12$-regular (machine census, Appendix~C), and the
+touching channels contribute $v(A+12I)$.
+
+\subsection{Disjoint pairs}\label{subsec:disjoint}
+If $p,q$ are distinct and share no link, the intermediate state supported on
+$p\cup q$ (regeneration, $E_n=6$, denominator $-3$) contributes $-\frac13$
+off-diagonal. The diagonal disjoint bookkeeping contributes
+$-\frac{|\mathcal P|-13}{3}$: the sum over $q$ disjoint from $p$ has
+$|\mathcal P|-13$ terms ($12$ touching plus $p$ itself excluded).
+
+\section{Effective Hamiltonian, vacuum subtraction, and the head of the band}
+\label{sec:eff}
+Summing the channels, with $A$ the touching adjacency and $J$ all-ones,
+\begin{equation}\label{eq:M2}
+M_2 \;=\; v(A+12I)\;+\;\tfrac13 J\;-\;\tfrac15 I\;-\;\tfrac13\bigl(J-I-A\bigr)
+\;-\;\tfrac{|\mathcal P|-13}{3}\,I
+\;=\;\Bigl(\tfrac13+v\Bigr)A+c\,I,
+\end{equation}
+$c=\tfrac13+12v-\tfrac15-\tfrac{|\mathcal P|-13}{3}$: the all-ones operator
+cancels \emph{as an operator identity}. This identity is verified exactly at
+$L=5$ ($|\mathcal P|=375$) in \cite{YM04code}, symbolically over the
+plaquette link structure.
+
+\subsection{Ground-state subtraction and the vacuum-mixing consistency}
+The ground energy is, by non-degenerate analytic perturbation theory with
+intermediate states $|p\rangle$ (amplitude $-1$, denominator $0-3$),
+\[
+E_0(\mu)=\mu^2\sum_{p\in\mathcal P}
+\frac{|\langle p|V|\Omega\rangle|^2}{0-3}+O(\mu^4)
+=-\frac{|\mathcal P|}{3}\,\mu^2+O(\mu^4) ;
+\]
+the third-order term vanishes identically: its Rayleigh--Schr\"odinger
+expression is a sum of $\langle\Omega|V|n\rangle\langle n|V|m\rangle
+\langle m|V|\Omega\rangle/((0-E_n)(0-E_m))$, and
+$\langle\Omega|V|a\rangle\ne0$ forces $a$ to be a single-plaquette state:
+in the Peter--Weyl flux basis, any flux link outside $\mathrm{supp}\,r$ leaves
+an unpaired $\bar U$-factor and any $r$-link without matching flux leaves an
+unpaired $U$-factor (Appendix~A, rule (ii)), so $\mathrm{supp}\,a=
+\mathrm{supp}\,r$ with flux $\tfrac12$ throughout and $a\propto|p\rangle$ by
+Lemma 3.2 (at $L=4$ a winding support never coincides with a plaquette
+support); the middle factor is then some $\langle p|V|q\rangle=0$ (Lemma
+\ref{lem:first}); hence the $O(\mu^4)$ bound. Equivalently, in the one-particle sector the uniform mode
+$|u\rangle=|\mathcal P|^{-1/2}\sum_p|p\rangle$ mixes with the vacuum through
+$\langle u|V|\Omega\rangle=-|\mathcal P|^{1/2}$; the $2\times2$ block
+$\begin{pmatrix}0&-\mu|\mathcal P|^{1/2}\\ -\mu|\mathcal P|^{1/2}&3\end{pmatrix}$
+has upper eigenvalue $3+\frac{|\mathcal P|}{3}\mu^2+O(\mu^4)$ and lower
+eigenvalue $-\frac{|\mathcal P|}{3}\mu^2+O(\mu^4)$. The gap is
+band-bottom minus $E_0(\mu)$; the $+\frac{|\mathcal P|}{3}$ entering the
+$k=0$ band edge through $\frac13J$ in \eqref{eq:M2} is \emph{exactly} the
+same vacuum-intermediate contribution, counted once in $M_2$ and cancelled
+once by the subtraction $-E_0''=-\frac{|\mathcal P|}{3}$:
+\begin{equation}\label{eq:c2}
+c_2 \;=\; \lambda_{\min}\bigl((\tfrac13+v)A\bigr)+c+\frac{|\mathcal P|}{3}
+\;=\;12\Bigl(\tfrac13+v\Bigr)+\tfrac13+12v-\tfrac15+\tfrac{13}{3}
+\;=\;24v+\frac{127}{15}.
+\end{equation}
+Since $\tfrac13+v=-\tfrac1{21}<0$, the minimum of $(\tfrac13+v)A$ over the
+band is $(\tfrac13+v)\lambda_{\max}(A)$, attained at $k=0$.
+
+\begin{lemma}[band head]\label{lem:head}
+For every $L\ge4$, $\lambda_{\max}(A(k))\le 12$ for all crystal momenta
+$k\in[-\pi,\pi]^3$, with equality iff $k=0$; $\lambda_{\max}(A(0))=12$ with
+the uniform orientation eigenvector.
+\end{lemma}
+\begin{proof}
+Fourier transform in the translations: the fiber $A(k)$ is a $3\times3$
+matrix indexed by plaquette orientation $(xy,xz,yz)$:
+$A_{xy,xy}=2\cos k_x+2\cos k_y$, etc.,\ with off-diagonal
+$A_{xy,xz}=4\cos(k_y/2)\cos(k_z/2)$ and cyclic. By Gershgorin, every
+eigenvalue is $\le (2\cos k_x+2\cos k_y)+|A_{xy,xz}|+|A_{xy,yz}|
+\le 4+8=12$, and equality forces $\cos k_x=\cos k_y=1$ and
+$|\cos(k_y/2)|=|\cos(k_z/2)|=1$ etc.,\ i.e.\ $k=0$ in the Brillouin zone.
+At $k=0$, $A(0)$ is the adjacency of the finite graph and the all-ones
+vector gives $\lambda=12$ because $A$ is $12$-regular.
+\end{proof}
+The \emph{uniqueness} statements --- simplicity of the Perron root,
+rigidity of equality $\lambda_{\max}(A(k))=12\Rightarrow k=0$, and the fact
+that the exact deformed band minimum sits at $k=0$ for all sufficiently
+small $\mu$, with a strictly positive quadratic gap of leading coefficient
+$\tfrac{4}{63}$ to the next momentum --- are proved in
+Appendix~\ref{app:E} (Perron--Frobenius plus exact curvature
+$-\tfrac43|k|^2$; machine-checked in \texttt{code/verify\_bandhead.py}).
+
+\begin{proof}[Proof of Theorem \ref{thm:main}]
+$L\ge5$: Lemma \ref{lem:flux} gives $\mathcal M$ = plaquette states,
+orthonormal (Lemma \ref{lem:gram}). First order vanishes
+(Lemma \ref{lem:first}). Degenerate perturbation theory to second order
+is regular because the cluster $E=3$ is separated from the rest of the
+spectrum of $H_E$ on the gauge-invariant space by $\tfrac32$: the spectrum
+of $H_E$ is $\sum_\ell j_\ell(j_\ell+1)$ over spin networks, and the vertex
+rules (Lemma \ref{lem:valence}) plus bipartiteness of the cubic lattice
+force every closed network with $E<\tfrac92$ other than the vacuum to be a
+$4$-cycle at spin $\tfrac12$ ($2$-valent vertices force constant spin along
+loops, odd loops do not exist, and the smallest theta graph carries
+$E\ge7$); the next level is the $6$-loop $E=\tfrac92$. Thus the cluster is
+isolated by a gap $\tfrac32$ uniformly in $L$, and the band functions are
+$E_\alpha(\mu,k)=3+\mu^2\lambda_\alpha(M_2(k))+O(\mu^3)$ uniformly in $k$
+(analyticity, Section 2.3). By \eqref{eq:M2}, \eqref{eq:c2} and
+Lemma \ref{lem:head}, the bottom of the band minus $E_0(\mu)$ is
+$3+\bigl(24v+\tfrac{127}{15}\bigr)\mu^2+O(\mu^3)$ with $v=-\tfrac8{21}$:
+$24v+\tfrac{127}{15}=-\tfrac{192}{21}+\tfrac{127}{15}
+=-\tfrac{64}{7}+\tfrac{127}{15}=\tfrac{-960+889}{105}=-\tfrac{71}{105}$.
+The $|\mathcal P|$ dependence cancels identically in \eqref{eq:c2}; hence the
+coefficient is $L$-independent for $L\ge5$.
+\end{proof}
+
+\section{Volume independence}\label{sec:volume}
+The cancellation of $|\mathcal P|$ in \eqref{eq:c2} is exact, not asymptotic:
+the extensive vacuum-intermediate term $\frac13|\mathcal P|$ on the uniform
+mode is cancelled by the extensive diagonal disjoint term
+$-\frac{|\mathcal P|-13}{3}$ plus the subtraction $+\frac{|\mathcal P|}{3}$.
+What remains, $24v+\tfrac{127}{15}$, involves only the local touching
+geometry, identical for all $L\ge5$ (the $13$ = $12+1$ touching census is
+$L$-independent; at $L=4$ the winding sector changes the spectrum, Section 8).
+The machine verification at $L=5$ builds the full $375\times375$ operator
+over $\mathbb Q$ and confirms \eqref{eq:M2} entry-by-entry
+\cite{YM04code}.
+
+\section{The $L=4$ winding sector}\label{sec:L4}
+At $L=4$ there are $192$ plaquettes and $48$ straight winding loops
+($3$ directions $\times\ 4^2$ transverse positions); the census is exact and
+machine-checked. Winding states $|w\rangle$ are orthonormal to plaquette
+states and to each other by Lemma \ref{lem:gram}. First order remains zero
+(center parity, Lemma \ref{lem:first}). \begin{lemma}[winding decoupling]\label{lem:mix}
+$\langle p|M_2|w\rangle=0$ for every plaquette $p$ and winding loop $w$ at
+$L=4$.
+\end{lemma}
+\begin{proof}
+First the geometric census: $|p\cap w|\le1$ for all pairs --- the two
+parallel links of a plaquette share their longitudinal coordinate, the four
+links of a straight winding have distinct longitudinal coordinates (exact
+census over all $192\times48$ pairs in \texttt{verify\_census.py}). Every
+intermediate contributing to $\langle p|M_2|w\rangle$ arises from $V|w\rangle$:
+the vacuum (killed by $\langle\Omega|V|w\rangle=0$, support: no plaquette
+support equals a winding support), $|\chi_1(w)\rangle$ (energy $8$), fused
+two-loop states on $w\cup r$ (energies $9/2,13/2$), or products $\chi_r\chi_w$
+(energy $6$). Pairing with $\langle p|V$ inserts one further plaquette
+character $\chi_s$, and covering all four winding links would require
+$|p\cap w|+|s\cap w|\ge4$ while the census gives $\le2$; some winding link is
+therefore left uncovered, carrying a single unpaired $U$-factor in the fused
+and product channels (rule A.1(ii)) or two $U$-factors in one symmetric
+spin-$1$ slot in the $\chi_1$ channel (Lemma \ref{lem:sym2}). Every channel
+vanishes link by link.
+\end{proof}
+Thus the second-order block is diagonal in the plaquette/winding split. For winding states: $16$ touching channels (each
+$=v$), no $\chi_1$ self channel, no vacuum channel
+($\langle w|V|\Omega\rangle$ contributes only through the same parity
+argument), disjoint diagonal $-\frac{|\mathcal P|-16}{3}$, giving
+\[
+c_{2,w}^{\rm diag}=16v+\frac{16}{3}=-\frac{16}{21}\approx-0.7619
+<-\frac{71}{105}\approx-0.6762 .
+\]
+The winding chain block has zero diagonal, so the head of the winding band is
+$\le-16/21$, strictly below $-71/105$: at $L=4$ the gap is governed by the
+winding sector and Theorem \ref{thm:main} fails. The exact
+$c_2(L{=}4)=-\frac{16}{21}+\lambda_{\min}(B_w)$ requires the two-link chain
+recoupling of the block $B_w$, which we have not computed; we state the
+bound and name the open value rather than guess it.
+
+\section{Scope: fixed volume, uniformity, continuum}\label{sec:scope}
+Theorem \ref{thm:main} is a fixed-$L$ perturbative identity:
+$\mu_0$ may depend on $L$, and the $O_L(\mu^3)$ remainder is not controlled
+uniformly in $L$. It does not imply $\Delta_{\rm unif}(\mu)>0$, nor anything
+about $a\to0$. The distinction between (i) the finite-volume gap,
+(ii) the volume-uniform gap at fixed coupling, and (iii) the continuum gap is
+enforced throughout, following the campaign's model specification
+\cite{YM01spec}. The relation of the coefficient to published
+strong-coupling series (Kogut--Sinclair--Susskind and successors) and the
+novelty classification are recorded in the literature ledger \cite{YM04ledger};
+absence of an exact printed match is reported as ``not located,'' not as
+proof of novelty. For honesty about the ingredients we note explicitly that
+the individual second-order channel values $-\tfrac13$, $-\tfrac16$,
+$-\tfrac{3}{14}$ appearing in Section~5 are published, in print, in the
+closest fully accessible relative of our calculation --- the $2{+}1$-dimensional
+strong-coupling static-potential analysis of Morningstar, whose staple
+classes carry exactly these numbers (the recoupling weights
+$\tfrac14,\tfrac34$ and denominators $-\tfrac32,-\tfrac72$ are
+dimension-independent); what is not located in the accessible literature is
+the assembled $3{+}1$-dimensional one-glueball-band coefficient
+$-\tfrac{71}{105}$ with exact vacuum subtraction and the finite-volume
+band-head theorem. The novelty classification is \textsc{Novelty
+Unresolved}: the single object-matched prior source,
+Kogut--Sinclair--Susskind, Nucl.\ Phys.\ \textbf{B114} (1976) 199--236,
+remains \textsc{Access-Incomplete} after eleven independent retrieval
+routes. The exact equivalence test is recorded for whoever obtains the
+text: convert their printed second-order gap, under $\mu=2g^{-6}$ and
+energies in units $g^2/2$, to
+$\Delta_{\rm phys}=(3/2)g^{2}-(142/105)g^{-10}$; agreement yields
+\textsc{Known}, a different converted value yields \textsc{Novelty
+Supported}. No originality is claimed here.
+
+\section*{Acknowledgments}
+Prepared as mission YM-04 of a personal research campaign; the manuscript
+supersedes nothing in the archive, which is preserved unchanged.
+
+\begin{thebibliography}{99}
+\bibitem{KS75} J.~B.~Kogut, L.~Susskind, ``Hamiltonian formulation of
+lattice gauge theories,'' Phys.\ Rev.\ D \textbf{11} (1975) 395.
+\bibitem{KSS76} J.~B.~Kogut, D.~K.~Sinclair, L.~Susskind, ``Monte Carlo
+calculation of glueball energies in Hamiltonian lattice gauge theory,''
+Nucl.\ Phys.\ \textbf{B114} (1976) 199.
+\bibitem{DZ83} J.-M.~Drouffe, C.~Itzykson (and C.~B.~Lang), strong-coupling
+methods; J.-M.~Drouffe, H.~J.~Zuber, Phys.\ Rep.\ \textbf{102} (1983) 1.
+\bibitem{MM94} C.~Montvay, G.~M\"unster, \emph{Quantum Fields on a
+Lattice}, Cambridge (1994).
+\bibitem{Weyl} H.~Weyl, \emph{The Classical Groups}; Peter--Weyl
+orthogonality as in M.~R\"oser, or standard references; Weingarten calculus:
+D.~Weingarten, J.\ Math.\ Phys.\ \textbf{19} (1978) 999; Collins-type bounds
+not needed (exact finite computations only).
+\bibitem{YM04code} Verification code (exact-rational SymPy, no numerical
+fitting): \texttt{code/verify\_anchors.py}, \texttt{verify\_identity.py},
+\texttt{verify\_census.py}, \texttt{verify\_bandhead.py}, accompanying this
+manuscript.
+\bibitem{YM04ledger} Supplementary documents accompanying this manuscript
+(static copies, checksummed in \texttt{MANIFEST.sha256}): the primary-source
+access log for \textsc{B114} (1976) with the recorded equivalence test, and
+the gap taxonomy (fixed-volume / volume-uniform / continuum) used in
+Section~9. The scope and novelty statements of Section~9 are reproduced in
+full in the body of this paper, so the manuscript is logically
+self-contained.
+\end{thebibliography}
+
+\input{appendix-body}
+
+\end{document}
