@@ -8,10 +8,12 @@ Issue for any finding, however small.
    particularly R3'?**
    Appendix F (`appendix-body.tex`, Lemma `lem:valence`, Proposition
    `prop:exhaust`) enumerates intermediate states via vertex singlet rules
-   plus a complete finite enumeration. The standalone exhaustive derivation
-   of the selection rule in Lemma `lem:exhaust1` is declared open (R3').
-   Is the declared gap real? Can a self-contained derivation be supplied —
-   or a counterexample found?
+   plus a complete finite enumeration. The formerly open standalone
+   derivation (R3') is now supplied as **Appendix G** (Peter–Weyl external
+   typing, four-channel overlap decomposition, crossed-channel
+   annihilation), internally proved and model-reviewed but **not human
+   peer reviewed**: please audit Appendix G directly — accept it, or find
+   the counterexample the model reviewers missed.
 
 2. **Are the degenerate perturbation and vacuum-mixing calculations
    correct?**

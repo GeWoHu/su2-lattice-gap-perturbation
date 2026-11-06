@@ -1,0 +1,24 @@
+{
+  "mission": "YM-05",
+  "receipt": "META-01 mechanical self-check (FINAL)",
+  "generated": "2026-11-05T21:45 CST",
+  "claim": "R3' (exhaustive SU(2) two-plaquette recoupling selection rule) PROVED; published statement unchanged; round-3 derivation sentence corrected",
+  "checks": {
+    "artifact:R3PRIME_PROOF.md": {"pass": true, "detail": "537b332753722a9a", "note": "final disposition section present; \u00a73A/\u00a73B repair present"},
+    "artifact:appendix-r3prime-draft.tex": {"pass": true, "detail": "7184a31686a3553b", "note": "prepared, NOT pushed"},
+    "artifact:AMENDMENT_DRAFT.md": {"pass": true, "detail": "5cb833255caa5692", "note": "prepared, NOT pushed"},
+    "artifact:code/verify_r3prime.py": {"pass": true, "detail": "a2a609613de0ddb8"},
+    "regression:verify_r3prime": {"pass": true, "detail": "receipts/verify_r3prime.txt: ALL R3' REGRESSION CHECKS PASS (exact rationals; content tables via Weyl formula, Weingarten normalizations, eps-annihilation Sym^3/Sym^4, weights 1/4+3/4, energies, slot-cap)"},
+    "regression:ym04.6_suite": {"pass": true, "detail": "verify_anchors/identity/census/bandhead/intertwiners: 5/5 exit 0 (regression/*.txt, run 2026-11-05 18:44)"},
+    "referee:audit_A": {"pass": false, "detail": "c5d8b11d33d28670 REJECTED (3 blocking) \u2192 resolved in \u00a73A/\u00a73B"},
+    "referee:audit_B": {"pass": true, "detail": "7327a4fafe39d70c APPROVED (independent enumeration, scratch code/referee_scratch_alt.py)"},
+    "referee:rereview_2": {"pass": false, "detail": "58768a4eabd27a40 REJECTED (1 surviving: external typing) \u2192 prescribed fix implemented"},
+    "referee:fix_confirmation": {"pass": true, "detail": "74df525d679c4e89 APPROVED, items (a)-(e) PASS, no residual gaps"},
+    "claim:no_hypothesis_weakening": {"pass": true, "detail": "frozen \u00a71 statement quoted verbatim from YM-04.6 Appendix F; hypotheses untouched"},
+    "claim:brute_force_not_substituted": {"pass": true, "detail": "completeness via Schur\u2013Weyl/Peter\u2013Weyl; enumeration only as cross-check"},
+    "claim:archives_preserved": {"pass": true, "detail": "ym04/ym046 untouched; FROZEN_SOURCE_HASHES.txt a720e22645dc51d5 verified; public commit 682cb9b6 unchanged (no push)"},
+    "claim:novelty": {"pass": true, "detail": "UNRESOLVED maintained; no originality/journal/arXiv/continuum claims"}
+  },
+  "verdict": "PROVED",
+  "verdict_basis": "2 independent hostile audits + 2 re-review rounds; sole dissenting referee's prescribed minimal fix implemented and confirmed by that referee line-by-line (items a-e PASS); exact-arithmetic regression ALL PASS; frozen statement unchanged"
+}

@@ -277,25 +277,37 @@ $\tfrac12$. In particular $E(n)=\sum j(j{+}1)$ over that support.
 $\langle n|H_M|p\rangle=\sum_{q}\int\overline{\chi_1(n)}\,\chi_{1/2}(U_q)\,
 \chi_1(p)\,dU$. For each link $\ell$, the two plaquette
 characters $\chi_1(p)\,\chi_{1/2}(U_q)$ carry, in their tensor-network
-expansion, two fundamental slots around the closed spin-$1$ chain of $p$
-and one fundamental slot around the chain of $q$. A link in
+expansion, one fundamental slot per link around the closed chain of $p$
+and one around the chain of $q$.
+\footnote{\textbf{Erratum (2026-11-06).} The round-3 text read ``two
+fundamental slots around the closed spin-$1$ chain of $p$'' and counted
+``three slots (odd)'' on the overlap. Under the frozen convention
+$|p\rangle=\chi_{1/2}(U_p)$ (Sec.~2; the index display of Appendix~A has
+one slot per link) each character contributes \emph{one} slot per link,
+so the overlap carries \emph{two} slots. The selection-rule
+\emph{statement} is unaffected; the standalone derivation in
+Appendix~G uses the corrected count. Correction history preserved in
+\texttt{evidence/REFEREE\_R3PRIME\_ADJUDICATION.md}.} A link in
 $\mathrm{supp}(q)\setminus\mathrm{supp}(p)$ carries exactly one
 fundamental pair; degree matching of the $U_\ell$ integral against the
 conjugate spin-$j_\ell(n)$ chain of $\overline{\chi_1(n)}$ then forces
 $j_\ell(n)=\tfrac12$. A link in $\mathrm{supp}(p)\cap\mathrm{supp}(q)$
-carries three slots (odd); the admissible intermediate spins there are the
+carries two slots; the admissible intermediate spins there are the
 recoupling channels of the two fundamental legs of $q$ against the
 spin-$1$ chain of $p$ computed in Appendices A--B: the singlet channel
 ($s=0$, weight $c_0^2=\tfrac14$) and the triplet channel ($s=1$, weight
 $c_1^2=\tfrac34$), so $j_\ell(n)\in\{0,1\}$ on the overlap.
-\textbf{Open (revision item R3'):} the exhaustive form of this selection
-rule --- that the recoupling channels of Appendices A--B are the \emph{only}
-nonvanishing overlap contributions, with no higher-spin chain terms ---
-is currently established by the exact full-space operator identity of
+\textbf{Resolved (revision item R3'):} the exhaustive form of this
+selection rule --- that the recoupling channels of Appendices A--B are
+the \emph{only} nonvanishing overlap contributions, with no higher-spin
+chain terms --- is now established by the standalone Peter--Weyl
+derivation of Appendix~G (internally proved; independently
+model-reviewed, not human peer review). The prior text read: ``\ldots\ is
+currently established by the exact full-space operator identity of
 Appendix D and the complete vertex-rule enumeration of
 Proposition~\ref{prop:exhaust}, not by a standalone link-level parity
 argument; a self-contained derivation is required before external review
-of the exhaustion proof. Rule (ii) then requires an intertwiner
+of the exhaustion proof.'' Rule (ii) then requires an intertwiner
 at each site of the union support; sites outside
 $\mathrm{supp}(p)\cup\mathrm{supp}(q)$ carry unmatched single $\bar U$
 factors from $\overline{\chi_1(n)}$ unless $j_\ell(n)=0$ there, giving the
@@ -388,3 +400,97 @@ $|\mathcal P|-13$ (disjoint), matching \eqref{eq:M2}. No other pair
 geometry exists (Lemma \ref{lem:exhaust2}) and no other spin assignment on
 these supports passes Lemma \ref{lem:valence}, so the list is exhaustive.
 \end{proof}
+
+\section{Standalone exhaustion proof of the selection rule (R3')}
+\label{app:G}
+
+This appendix supplies the self-contained derivation required by
+revision item R3': the selection rule of Lemma~\ref{lem:exhaust1} is
+exhaustive --- the singlet and triplet recoupling channels of
+Appendices~A--B are the \emph{only} nonvanishing overlap contributions,
+with no higher-spin chain terms. The argument uses only the frozen
+conventions of Sec.~2, Schur--Weyl theory, and Peter--Weyl
+orthogonality; it is independent of the full-space operator identity of
+Appendix~D and of the enumeration of Proposition~\ref{prop:exhaust},
+which now serve as cross-checks.
+
+\begin{lemma}[External type of the intermediate states]
+\label{lem:extype}
+Let $\psi_n$ be a gauge-invariant $H_E$-eigenstate with per-link spins
+$\{j_\ell(n)\}$. Regarded as a function on $G^L$, $G=\mathrm{SU}(2)$,
+$\psi_n$ lies in the coefficient space of $\bigotimes_\ell
+\rho_{j_\ell}$, $\rho_j=\mathrm{Sym}^{2j}$: under left $\times$ right
+translation on link $\ell$ it is of \emph{external type} $(j_\ell,j_\ell)$
+(diagonal); the vertex intertwiners supply the endpoint contractions.
+Conjugation preserves external type ($V^*\cong V$ via $\varepsilon$), so
+$\overline{\psi_n}$ has the same diagonal type, and reversed loop
+traversal (whole-loop inversion, $\Tr A^{-1}=\Tr A$ on $\mathrm{SU}(2)$)
+maps the slot reading $(2,0)\leftrightarrow(1,1)$, $(1,0)\leftrightarrow
+(0,1)$ without changing the integrand or the admissible spins.
+\end{lemma}
+
+\begin{lemma}[Four-channel decomposition of the insertion]
+\label{lem:fourt}
+Decompose $F:=\chi_{1/2}(U_q)\,\chi_{1/2}(U_p)$ link by link in external
+typing. A link in $\mathrm{supp}(p)\,\Delta\,\mathrm{supp}(q)$ carries a
+single matrix entry, of type $(\tfrac12,\tfrac12)$. An overlap link
+carries a product of two entries, content $(V\otimes V,\,
+V^*\otimes V^*)$, and by Schur--Weyl $V\otimes V=0\oplus 1$ in each slot
+independently:
+\[
+(0\oplus 1,\;0\oplus 1)\;=\;(0,0)\oplus(0,1)\oplus(1,0)\oplus(1,1),
+\]
+four channels, the crossed ones included. A link outside
+$\mathrm{supp}(p)\cup\mathrm{supp}(q)$ contributes type $(0,0)$. The
+decomposition is complete and multiplicity-free.
+\end{lemma}
+
+\begin{lemma}[Crossed-channel annihilation]
+\label{lem:cross}
+The Haar integral on $G^L$ is bi-invariant: applied to a pure-type tensor
+it is nonzero only on the $(0,0)$ component of every link. Since
+$\overline{\psi_n}$ has type $(j_\ell,j_\ell)$, the product
+$\overline{\psi_n}\cdot F$ contains $(0,0)$ on link $\ell$ only where
+$F$ has a component of type $(j_\ell,j_\ell)$: the crossed channels
+$(1,0)$ and $(0,1)$ pair with $\overline{\psi_n}$ to $(j\otimes 1,\,
+j\otimes 0)$ resp.~$(j\otimes 0,\, j\otimes 1)$, which contain $(0,0)$
+only if $j=1$ and $j=0$ simultaneously --- impossible --- hence crossed
+channels contribute zero for every $j$.
+\end{lemma}
+
+\begin{theorem}[R3', exhaustive form]
+\label{thm:r3prime}
+If $\langle n|H_M|p\rangle\ne 0$ then $j_\ell(n)=\tfrac12$ on
+$\mathrm{supp}(q)\,\Delta\,\mathrm{supp}(p)$, $j_\ell(n)\in\{0,1\}$ on
+$\mathrm{supp}(p)\cap\mathrm{supp}(q)$, and $j_\ell(n)=0$ outside
+$\mathrm{supp}(p)\cup\mathrm{supp}(q)$; and the only nonvanishing
+overlap contributions are the singlet and triplet channels of
+Appendix~B, with weights $c_0^2=\tfrac14$, $c_1^2=\tfrac34$.
+\end{theorem}
+\begin{proof}
+Necessity and exhaustivity: Lemmas~\ref{lem:extype}--\ref{lem:cross}
+link by link --- symmetric-difference links force $j=\tfrac12$ (only
+channel $(\tfrac12,\tfrac12)$); overlap links force $j\in\{0,1\}$
+(diagonal channels $(0,0)$ and $(1,1)$; crossed channels annihilate);
+exterior links force $j=0$. No other channels exist by the completeness
+of the Schur--Weyl decomposition, so no higher-spin chain terms occur.
+Realizability: Appendix~B computes both surviving projectors explicitly
+($c_0^2=\tfrac14$, $c_1^2=\tfrac34$, both nonzero; $P_0+P_1=1$ on
+$V\otimes V$), and the vertex rules (Lemma~\ref{lem:valence}) give
+multiplicity one, reproducing the assignment list of
+Proposition~\ref{prop:exhaust}: self $\{E=0,\;E=8\}$, touching
+$\{E=\tfrac92,\;E=\tfrac{13}{2}\}$, disjoint $\{E=6\}$. All weights,
+energies, content tables, and the symmetric-block $\varepsilon$-annihilation
+are additionally machine-checked in exact rational arithmetic by
+\texttt{code/verify\_r3prime.py} (receipt
+\texttt{receipts/verify\_r3prime.txt}).
+\end{proof}
+
+\begin{remark}
+The corrected slot count (two slots on the overlap, not three) is used
+throughout; see the erratum footnote in Appendix~F. Independent
+model-based referee trails (two hostile audits, two re-review rounds,
+split verdict adjudicated line by line) are preserved in
+\texttt{evidence/REFEREE\_R3PRIME*.md}. This is model-based review,
+\emph{not} human peer review.
+\end{remark}

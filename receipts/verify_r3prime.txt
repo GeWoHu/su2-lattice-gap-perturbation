@@ -1,0 +1,21 @@
+(1) CONTENT TABLES (Weyl integration formula, exact):
+    dmu = (2/pi) sin^2(theta) dtheta on [0,pi]; chi_j = U_{2j}(cos t);
+    mult_j(chi_{1/2}^m) = 2 * ct[(2x)^m U_{2j}(x) (1-x^2)]
+    m=1: content {Fraction(1, 2): 1} OK
+    m=2: content {Fraction(0, 1): 1, Fraction(1, 1): 1} OK
+    m=3: content {Fraction(1, 2): 2, Fraction(3, 2): 1} OK
+    structural cap: unit plaquettes use each link once => slots per
+    link = 1_{l in p} + 1_{l in q} <= 2; the m=3 content {1/2,3/2}
+    never arises for two unit plaquettes: NO HIGHER-SPIN CHANNELS OK
+(2) WEINGARTEN CONSISTENCY (exact):
+    eps-pairing (j=0 of m=2) and delta-pairing normalizations OK
+(3) SYMMETRIC-BLOCK EPSILON ANNIHILATION (exact 0/1 tensors):
+    j=1.5: eps-contraction of Sym^3 image = 0 OK
+    j=2.0: eps-contraction of Sym^4 image = 0 OK
+(4) CHANNEL WEIGHTS: c0^2 = 1/4 (singlet dim 1), c1^2 = 3/4
+    dims 1 and 3 of 2x2=4 OK
+(5) CHANNEL ENERGIES E = sum j(j+1):
+    cluster E=3; self {0,8}; touching {9/2,13/2}; disjoint {6} OK
+(6) SLOT-COUNT CAP TABLE (Lemma 3, per-link admissibility):
+    symmetric-difference {1/2}; overlap {0,1}; exterior {0} OK
+ALL R3' REGRESSION CHECKS PASS (exact)
