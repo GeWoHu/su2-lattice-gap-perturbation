@@ -7,6 +7,7 @@
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}{Assumption}
 \newtheorem{remark}[theorem]{Remark}
 \newcommand{\Tr}{\operatorname{Tr}}
 \newcommand{\G}{{\mathrm{SU}}(2)}
@@ -37,7 +38,13 @@ most $-16/21$. All group-theoretic coefficients are exact rational numbers
 derived from Peter--Weyl orthogonality, $6j$ recoupling, and the
 $\G$ Weingarten calculus; every step is machine-verifiable in exact rational
 arithmetic. The statement is a fixed-volume perturbative theorem; no
-uniformity in $L$ and no continuum limit are claimed.
+uniformity in $L$ and no continuum limit are claimed. Claim hierarchy
+(2026-11-09): the identification of the second-order coefficient with the
+full spectral-gap expansion uses the channel-exhaustion selection rule R3'
+of Appendix~G, which the main text states as an explicit \emph{Assumption}
+pending human verification; all coefficient identities, the band-head
+curvature and uniqueness analysis, and the conversion dictionary are
+unconditional and machine-checked.
 \end{abstract}
 
 \section{Introduction and result}
@@ -69,9 +76,24 @@ resolvent, $H_M$ is bounded). The vacuum $\Omega\equiv 1$ has $H(0)\Omega=0$;
 for $\mu>0$ small it is the unique ground state (analytic perturbation
 theory, Section~3).
 
+\begin{assumption}[R3', channel exhaustion]\label{ass:r3prime}
+Every intermediate state $n$ with $\langle n|H_M|p\rangle\neq 0$ that
+contributes to the second-order term is of the recoupling type analyzed in
+Appendices~A--B: writing $j_\ell(n)$ for the link spins of $n$ and $p,q$ for
+the two plaquettes involved, $j_\ell(n)=\tfrac12$ on
+$\mathrm{supp}(q)\,\Delta\,\mathrm{supp}(p)$, $j_\ell(n)\in\{0,1\}$ on
+$\mathrm{supp}(p)\cap\mathrm{supp}(q)$, $j_\ell(n)=0$ outside
+$\mathrm{supp}(p)\cup\mathrm{supp}(q)$; and the only nonvanishing overlap
+contributions are the singlet and triplet channels of Appendix~B, with
+weights $c_0^2=\tfrac14$, $c_1^2=\tfrac34$. The exact exhaustive form is
+Theorem~\ref{thm:r3prime}; Appendix~G contains the claimed proof, offered
+for human audit.
+\end{assumption}
+
 \begin{theorem}[main]\label{thm:main}
-For every fixed $L\ge 5$ there exists $\mu_0(L)>0$ such that for
-$0<\mu<\mu_0(L)$ the spectral gap of $H(\mu)$ above its ground state is
+Under Assumption~\ref{ass:r3prime}, for every fixed $L\ge 5$ there exists
+$\mu_0(L)>0$ such that for $0<\mu<\mu_0(L)$ the spectral gap of $H(\mu)$
+above its ground state is
 \[
 \Delta(\mu,L)\;=\;3-\frac{71}{105}\,\mu^2+O_L(\mu^3),\qquad \mu\to0^+ .
 \]
@@ -80,6 +102,20 @@ minimum is attained at crystal momentum $k=0$, in the uniform
 orientation-symmetric one-plaquette mode, uniquely among band minima at
 second order.
 \end{theorem}
+
+Without Assumption~\ref{ass:r3prime} the unconditional content is: the exact
+rational value $-71/105$ of the second-order coefficient of the truncated
+second-order expression over the Appendices~A--B channels (machine-checked),
+the band-head curvature and Perron--Frobenius uniqueness, and every
+conversion identity. Assumption~R3' enters exactly once: to identify that
+channel sum with the second-order coefficient of the full resolvent
+expansion.
+\begin{remark}
+On 2026-11-09 an external review declined to accept the Appendix~G
+exhaustion argument as human-review grade. Rather than conceal the point,
+this paper states R3' as a named assumption and records the full
+adversarial-review trail in \texttt{evidence/REFEREE\_R3PRIME*.md}.
+\end{remark}
 
 \begin{corollary}[physical units]\label{cor:phys}
 With $H_{\rm KS}=\frac{g^2}{2}\sum_\ell E^2(\ell)-\frac{1}{2g^4}\sum_p

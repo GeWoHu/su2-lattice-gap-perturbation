@@ -47,3 +47,15 @@ Issue for any finding, however small.
   `evidence/`); it is not human peer review.
 - Every numeric claim has an exact-arithmetic script behind it
   (`code/`, `receipts/`).
+
+## The single load-bearing item (updated 2026-11-09)
+Everything conditional in this paper rests on **Assumption R3'** — the
+channel-exhaustion selection rule stated before the main theorem, with the
+claimed proof in Appendix G. Human auditors should attack Appendix G first:
+the Peter–Weyl external typing, the four-channel decomposition
+`(0,0)⊕(0,1)⊕(1,0)⊕(1,1)`, and the crossed-channel annihilation against the
+diagonal `(j,j)` type. If Appendix G survives audit, Assumption R3' is
+discharged and the main theorem becomes unconditional within the stated
+fixed-volume scope. If it fails, the unconditional residue is precisely the
+machine-checked truncated second-order expression with coefficient −71/105
+over the Appendices A–B channels, plus the band-head and dictionary results.

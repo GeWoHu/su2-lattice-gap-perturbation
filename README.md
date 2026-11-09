@@ -22,14 +22,21 @@ Physical normalization (`mu = 2 g^-6`):
 Delta_phys = (3/2) g^2 - (142/105) g^-10 + O(g^-16)
 ```
 
-with relative second-order coefficient `284/315 · g^-12`. All coefficient
-identities are verified in exact rational arithmetic (see
-[Reproducibility](#reproducibility)); the coefficient is **not** described
-as a certified new theorem.
+with relative second-order coefficient `284/315 · g^-12`, **conditional on
+Assumption R3'** (channel exhaustion; see "What is open" item 1). All
+coefficient identities are verified in exact rational arithmetic and are
+unconditional (see [Reproducibility](#reproducibility)); the coefficient is
+**not** described as a certified new theorem.
 
 ## What is open
 
-1. **R3' — internally proved (2026-11-06); human review still requested.**
+1. **R3' — stated as an explicit Assumption (downgraded 2026-11-09).**
+   An external review declined to accept the Appendix G exhaustion argument
+   as human-review grade. The main theorem is therefore stated **conditional
+   on Assumption R3'** (channel-exhaustion selection rule); the coefficient
+   identities, band-head analysis, and conversion dictionary are unconditional
+   and machine-checked. Appendix G is retained unchanged as the claimed proof,
+   offered for human audit.
    The standalone exhaustive derivation of the channel-exhaustion selection
    rule is now supplied as **Appendix G**: Peter–Weyl external typing, the
    complete four-channel overlap decomposition `(0,0)⊕(0,1)⊕(1,0)⊕(1,1)`,

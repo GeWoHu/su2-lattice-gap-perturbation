@@ -69,3 +69,15 @@ YM-04 sources verified unchanged against fork-time record:
 Fixed-volume perturbation theory only (\(L\ge5\), \(\mu_0(L)\), \(O_L(\mu^3)\));
 no uniform-in-volume claim, no continuum claim. No submission, no journal contact,
 no further coefficient research initiated.
+
+## Addendum (2026-11-09, external-review response — Path 1)
+An external referee declined the Appendix G exhaustion argument as
+human-review grade. Per owner decision (Path 1), the claim hierarchy was
+corrected WITHOUT touching any computation: the main theorem is now stated
+under an explicit **Assumption R3'** (channel-exhaustion selection rule,
+stated before the main theorem in manuscript.tex); Appendix G carries a
+status note; README reflects the conditional status. All unconditional
+machine-checked content (coefficient identities, band-head curvature and
+PF uniqueness, conversion dictionary) is unchanged and re-verified.
+Path 2 (full standalone spin-network derivation removing the assumption)
+remains an open research option, not undertaken.
